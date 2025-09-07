@@ -1,0 +1,368 @@
+.sidebar {
+  background-color: #2a2a2a;
+  border-right: 1px solid #404040;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-header {
+  padding: 12px;
+  border-bottom: 1px solid #404040;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 60px;
+}
+
+.toggle-btn {
+  background-color: #404040;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: #505050;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.quantity-btn {
+background-color: #404040;
+  border: 1px solid #555;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;  /* stack icon and text vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 4px;                /* space between icon and text */
+  font-size: 12px;
+  transition: background-color 0.2s;
+  text-align: center;
+  min-width: 60px;         /* optional, make buttons consistent size */
+}
+
+.quantity-btn:hover {
+  background-color: #505050;
+}
+
+.quantity-btn span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+.quantity-display {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.quantity-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.sidebar-controls {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #404040;
+}
+
+.control-btn {
+  background-color: #404040;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+  background-color: #505050;
+}
+
+.tag-btn {
+  background-color: #007bff;
+}
+
+.tag-btn:hover {
+  background-color: #0056b3;
+}
+
+.search-section {
+  padding: 12px;
+  border-bottom: 1px solid #404040;
+}
+
+.search-input {
+  width: 100%;
+  background-color: #404040;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.cart-item {
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 0px;
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+  background-color: #3a3a3a;
+}
+
+.cart-item.deleted {
+  background-color: #4a2c2c;
+  border-color: #dc3545;
+  opacity: 0.7;
+}
+
+.cart-item.deleted:hover {
+  background-color: #5a3333;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.item-name {
+  font-weight: 500;
+  color: white;
+}
+
+.item-quantity {
+  
+  color: white;
+  padding: 2px 8px;
+  border-radius: 0px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.item-details {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.item-code {
+  color: #ffc107;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.quantity-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-indicator {
+  color: #dc3545;
+  margin-left: 8px;
+}
+
+.cart-summary {
+  padding: 16px;
+  border-top: 1px solid #404040;
+  border-bottom: 1px solid #404040;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.total-row {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  border-top: 1px solid #404040;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+.sidebar-footer {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #404040;
+}
+
+.footer-btn {
+  flex: 1;
+  background-color: #404040;
+  border: 1px solid #555;
+  color: white;
+  padding: 8px;
+  border-radius: 0px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;   /* stack icon + text vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                 /* space between icon and text */
+  font-size: 11px;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.footer-btn span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.footer-btn:hover {
+  background-color: #555;
+}
+
+.void-btn {
+  background-color: #dc3545;
+}
+
+.void-btn:hover {
+  background-color: #c82333;
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid #404040;
+  }
+  
+  .sidebar.collapsed {
+    max-height: 60px;
+    width: 100%;
+  }
+  
+  .sidebar-header {
+    justify-content: center;
+  }
+  
+  .cart-items {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    max-height: 35vh;
+  }
+  
+  .cart-item {
+    padding: 8px;
+  }
+  
+  .item-details {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .sidebar-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .footer-btn {
+    padding: 6px;
+  }
+}
