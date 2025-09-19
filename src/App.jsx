@@ -3,6 +3,10 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import ProductGrid from './components/ProductGrid'
 import './App.css'
+import RightNav from "./components/RightNav";
+import ManagementModal from "./components/ManagementModel.jsx";
+import SearchItems from "./components/SearchItems.jsx";
+import AddProduct from "./components/AddProduct.jsx";
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
@@ -100,37 +104,64 @@ function App() {
   const tax = subtotal * 0.15
   const total = subtotal + tax
 
+  // const [navCollapsed, setNavCollapsed] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [managementOpen, setManagementOpen] = useState(false)
+  const [searchItemOpen, setSearchItemOpen] = useState(false)
+  const [addProductOpen, setAddProductOpen] = useState(false)
+
   return (
-    <div className="app">
-      <Header />
-      <div className="main-content" style={{ display: "flex" }}>
-        <Sidebar 
-          collapsed={sidebarCollapsed}
-          onToggle={toggleSidebar}
-          cartItems={cartItems}
-          onUpdateQuantity={updateQuantity}
-          onDeleteItem={deleteItem}
-          subtotal={subtotal}
-          tax={tax}
-          total={total}
-          width={sidebarWidth}
+      <div className="app">
+        <Header setOpen={() => setOpen(true)} />
+
+        <RightNav
+            open={open}
+            setOpen={setOpen}
+            setManagementOpen={setManagementOpen}
+            setSearchItemOpen={setSearchItemOpen}
+            setAddProductOpen={setAddProductOpen}
         />
 
-         <div 
-          style={{
-            width: "5px",
-            cursor: "col-resize",
-            background: "#ddd"
-          }}
-          onMouseDown={startResizing}
-        />
-        <ProductGrid 
-          products={products}
-          onAddToCart={addToCart}
-          sidebarCollapsed={sidebarCollapsed}
-        />
+        <div className="main-content" style={{display: "flex"}}>
+          <Sidebar
+              collapsed={sidebarCollapsed}
+              onToggle={toggleSidebar}
+              cartItems={cartItems}
+              onUpdateQuantity={updateQuantity}
+              onDeleteItem={deleteItem}
+              subtotal={subtotal}
+              tax={tax}
+              total={total}
+              width={sidebarWidth}
+          />
+
+          {managementOpen && (
+              <ManagementModal onClose={() => setManagementOpen(false)} />
+          )}
+
+          {searchItemOpen && (
+                <SearchItems onClose={() => setSearchItemOpen(false)} />
+              )}
+
+          {addProductOpen && (
+              <AddProduct onClose={() => setAddProductOpen(false)} />
+          )}
+
+          <div
+              style={{
+                width: "5px",
+                cursor: "col-resize",
+                background: "#494848"
+              }}
+              onMouseDown={startResizing}
+          />
+          <ProductGrid
+              products={products}
+              onAddToCart={addToCart}
+              sidebarCollapsed={sidebarCollapsed}
+          />
+        </div>
       </div>
-    </div>
   )
 }
 

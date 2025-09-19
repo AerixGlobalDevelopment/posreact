@@ -6,7 +6,7 @@ import refund from '../icons/refund.png'
 import drawer from '../icons/drawer.png';
 import './Header.css'
 
-const Header = () => {
+const Header = ({ setOpen }) => {
   return (
     <header className="header">
       <div className="header-left">
@@ -55,7 +55,7 @@ const Header = () => {
       
       <div className="header-right">
         
-        <button className="header-btn menu-btn">
+        <button className="header-btn menu-btn" onClick={setOpen}>
           <Menu size={20} />
         </button>
       </div>

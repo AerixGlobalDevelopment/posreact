@@ -1,0 +1,22 @@
+.modal-topbar {
+    height: 50px;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid #333;
+    color: white;
+}
+
+.modal-left {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* spacing between arrow and title */
+}
+
+.modal-left h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}

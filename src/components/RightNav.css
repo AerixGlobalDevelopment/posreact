@@ -1,0 +1,125 @@
+/* Sidebar container */
+.rightnav-overlay {
+    position: fixed;
+    top: 0;
+    right: -260px; /* hidden by default */
+    width: 260px;
+    height: 100vh;
+    background: #1f1f1f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    z-index: 200;
+}
+
+.rightnav-overlay ul.menu-item {
+    flex-grow: 1;
+}
+
+/* When open */
+.rightnav-overlay.open {
+    right: 0;
+}
+
+/* Header */
+.rightnav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    /*background: #2a2a2a;*/
+}
+
+.rightnav-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu list */
+.rightnav-overlay ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.rightnav-overlay li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 14px;
+}
+
+.rightnav-overlay li:hover {
+    background: #333;
+}
+
+.rightnav-overlay span{
+    font-size: 20px;
+}
+
+.menu-item-ma {
+    border-bottom: 2px solid #333;
+}
+
+.user-nav {
+    font-size: 14px;
+}
+
+.user-nav-line {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+/* date container */
+.nav-date-container {
+    padding: 16px 0;
+    text-align: center;
+    border-bottom: 2px solid #333;
+}
+
+/* date text */
+.nav-date {
+    font-size: 18px;
+    font-weight: 500;
+    color: #7e7d7d;
+}
+
+/* Footer section (date + icons) */
+.rightnav-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    gap: 30px;
+}
+
+/* icons row */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.footer-icons svg {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.footer-icons svg:hover {
+    color: #333;
+}

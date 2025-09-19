@@ -1,0 +1,39 @@
+/* Management submenu inside RightNav */
+.management-submenu {
+    margin-left: 20px;
+    padding: 10px 0;
+    border-left: 2px solid #333;
+    animation: slideDown 0.3s ease;
+}
+
+.management-submenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.submenu-item:hover {
+    background: #2a2a2a;
+    color: #60a5fa; /* highlight */
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
